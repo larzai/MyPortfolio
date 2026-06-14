@@ -1,0 +1,716 @@
+.page {
+  --dark: #17191b;
+  --soft-dark: #414447;
+  --light: #FEFEFE;
+  --light2: #F5F5F5;
+
+  --primary: #D0E505;
+
+  --gray-dark: #1F2937;
+  --gray: #6B7280;
+  --gray-light: #D1D5DB;
+
+  --bg-soft: #0A0A0A;   /* versi dark dikit */
+  --card: #111827;      /* buat card */
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--light);
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 719px) {
+  .underline {
+    width: 20%;
+    height: 2px;
+    background-color: #fff;
+  }
+  
+    /* Main Content */
+  .hero {
+    height: 100vh;
+  }
+  
+  /* List Container Item Hero */
+  .hero .backGround {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .hero .optionHero {
+    display: none;
+  }
+  
+  /* Background Content */
+  .hero .backGround .mainWrapper {
+    position: relative;
+    padding: 20px;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .hero .backGround .mainWrapper .about {
+    font-family: var(--font-scotch);
+    font-weight: normal;
+    font-size: 18vw;
+    text-transform: uppercase;
+    display: block;
+  }
+  
+  .hero .backGround .mainWrapper .aboutMe {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .hero .backGround .mainWrapper .aboutMe h1 {
+    font-family: var(--font-scotch);
+    font-weight: normal;
+    font-size: 18vw;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+  
+  .hero .backGround .mainWrapper p {
+    max-width: 35vw;
+    font-size: 1vw;
+    letter-spacing: 2px;
+    transform: translateY(2vw);
+    margin: 0;
+  }
+  
+  .hero .backGround .mainWrapper .shape {
+    position: absolute;
+    bottom: 70%;
+    right: 20%;
+    width: 150vw;
+    height: 150vw;
+    background: var(--gray-light);
+    border-radius: 50%;
+    z-index: -1;
+    animation: bentukDanPutar 6s linear infinite;
+  }
+  
+  @keyframes bentukDanPutar {
+      0% {
+          border-radius: 0;
+          transform: rotate(0deg);
+      }
+      50% {
+          border-radius: 50%;
+      }
+      100% {
+          border-radius: 0%;
+          transform: rotate(360deg);
+      }
+  }
+  
+  /* Option Hero Content*/
+  .hero .optionHero .linkButton {
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  
+  .hero .optionHero .linkButton a {
+    color: var(--dark);
+    font-size: 25px;
+    pointer-events: auto;
+  }
+  
+  .link1 { justify-self: start; align-self: start; }
+  .link2 { justify-self: end; align-self: start; }
+  .link3 { justify-self: start; align-self: end; }
+  .link4 { justify-self: end; align-self: end; }
+  
+    /* More About Me */
+  .aboutIAM {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px 0;
+  }
+  
+  .aboutIAM .aboutMeMore {
+    margin-top: 50px;
+    padding: 0 10vw;
+  }
+  
+  .aboutIAM .aboutMeMore img {
+    width: 35vw;
+    max-width: 420px;
+    height: auto;
+    float: right;
+    margin: 0 0 10px 5px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .aboutIAM .aboutMeMore p {
+    font-size: 16px;
+    color: #434343;
+    line-height: 1.6;
+  }
+  
+  .aboutIAM .aboutMeInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+    padding: 0 10vw;
+    margin-top: 40px;
+    box-sizing: border-box;
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: var(--light2);
+    border-radius: 25px;
+    transition: 0.3s ease;
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem:hover {
+    transform: translateY(-5px);
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem h1 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    line-height: 1;
+    color: #96ae3c;
+  }
+    
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem h2 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--dark);
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--soft-dark);
+  }
+  
+  /* Tech Stack */
+  .aboutMeTechStack {
+    width: 100%;
+    padding: 120px 10vw;
+    background: var(--light2);
+    color: var(--dark);
+    text-align: center;
+  }
+  
+  .aboutMeTechStack > h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #757575;
+    margin-bottom: 10px;
+  }
+  
+  .aboutMeTechStack > h1 {
+    font-size: 30px;
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  
+  .aboutMeTechStack > p {
+    padding-bottom: 8vh;
+    font-size: 16px;
+    color: #757575;
+    margin-bottom: 10px;
+  }
+  
+  .aboutMeTechGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);;
+    gap: 20px;
+  }
+  
+  .aboutMeTechGrid:has(.aboutMeTechCard:hover) .aboutMeTechCard {
+    filter: blur(4px);
+    opacity: 0.6;
+    transition: .3s ease;
+  }
+  
+  .aboutMeTechGrid:has(.aboutMeTechCard:hover) .aboutMeTechCard:hover {
+    filter: blur(0);
+    opacity: 1;
+  }
+  
+  .aboutMeTechCard {
+    background: var(--light);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 25px;
+    padding: 15px;
+    backdrop-filter: blur(20px);
+    transition: .3s ease;
+  }
+  
+  .aboutMeTechCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.50);
+  }
+  
+  .aboutMeTechCard h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .aboutMeTechItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .aboutMeTechItems span {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.30);
+    border: 1px solid rgba(255,255,255,0.50);
+    font-size: 10px;
+    transition: .25s ease;
+  }
+  
+  .aboutMeTechItems span:hover {
+    background: rgba(255,255,255,0.70);
+    transform: scale(1.05);
+  }
+  
+  /* Quotes Section */
+  .aboutMeQuote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 10vw;
+  }
+  
+  .aboutMeBoxQuote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    background: var(--dark);
+    border-radius: 25px;
+    padding: 60px 10vw;
+  }
+  
+  .aboutMeBoxQuote h1 {
+    font-size: 30vh;
+    line-height: 0.8;
+    margin: 0;
+    color: var(--gray-dark);
+    text-align: center;
+  }
+  
+  .aboutMeBoxQuote h2 {
+    font-size: 18px;
+    line-height: 1;
+    margin: -5vh 0 20px;
+    color: var(--light);
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .aboutMeBoxQuote p {
+    max-width: 700px;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--gray-light);
+    margin: 0;
+  }
+  
+}
+
+/* Tablet & Komputer */
+@media (min-width: 720px) {
+  .underline {
+    width: 5vw;
+    height: 2px;
+    background-color: #fff;
+  }
+  
+  /* Main Content */
+  .hero {
+    height: 100vh;
+  }
+  
+  /* List Container Item Hero */
+  .hero .backGround {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .hero .optionHero {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .hero .backGround .mainWrapper .shape {
+    position: absolute;
+    top: 0%;
+    left: 130%;
+    width: 70vw;
+    height: 70vw;
+    background: var(--gray-light);
+    border-radius: 50%;
+    z-index: -1;
+    animation: bentukDanPutar 6s linear infinite;
+  }
+  
+  @keyframes bentukDanPutar {
+      0% {
+          border-radius: 0;
+          transform: rotate(0deg);
+      }
+      50% {
+          border-radius: 50%;
+      }
+      100% {
+          border-radius: 0%;
+          transform: rotate(360deg);
+      }
+  }
+  
+  /* Background Content */
+  .hero .backGround .mainWrapper {
+    position: relative;
+    padding: 35px 25px;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .hero .backGround .mainWrapper .about {
+    font-family: var(--font-scotch);
+    font-weight: normal;
+    font-size: 18vw;
+    text-transform: uppercase;
+    display: block;
+  }
+  
+  .hero .backGround .mainWrapper .aboutMe {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .hero .backGround .mainWrapper .aboutMe h1 {
+    font-family: var(--font-scotch);
+    font-weight: normal;
+    font-size: 18vw;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+  
+  .hero .backGround .mainWrapper p {
+    max-width: 35vw;
+    font-size: 1vw;
+    letter-spacing: 2px;
+    transform: translateY(2vw);
+    margin: 0;
+  }
+  
+  /* Option Hero Content*/
+  .hero .optionHero .linkButton {
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  
+  .hero .optionHero .linkButton a {
+    color: var(--dark);
+    font-size: 25px;
+    pointer-events: auto;
+  }
+  
+  .link1 { justify-self: start; align-self: start; }
+  .link2 { justify-self: end; align-self: start; }
+  .link3 { justify-self: start; align-self: end; }
+  .link4 { justify-self: end; align-self: end; }
+  
+  /* More About Me */
+  .aboutIAM {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px 0;
+    z-index: 1;
+  }
+  
+  .aboutIAM .aboutMeMore {
+    margin-top: 50px;
+    padding: 0 10vw;
+  }
+  
+  .aboutIAM .aboutMeMore img {
+    width: 35vw;
+    max-width: 420px;
+    height: auto;
+    float: right;
+    margin: 0 0 20px 40px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .aboutIAM .aboutMeMore p {
+    font-size: 23px;
+    color: #434343;
+    line-height: 1.6;
+  }
+  
+  .aboutIAM .aboutMeInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+    padding: 0 10vw;
+    margin-top: 40px;
+    box-sizing: border-box;
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 50px;
+    background-color: var(--light2);
+    border-radius: 35px;
+    transition: 0.3s ease;
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem:hover {
+    transform: translateY(-5px);
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem h1 {
+    margin: 0 0 10px 0;
+    font-size: 50px;
+    line-height: 1;
+    color: #96ae3c;
+  }
+    
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--dark);
+  }
+  
+  .aboutIAM .aboutMeInfo .aboutMeInfoItem p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--soft-dark);
+  }
+  
+  /* Tech Stack */
+  .aboutMeTechStack {
+    width: 100%;
+    padding: 120px 10vw;
+    background: var(--light2);
+    color: var(--dark);
+    text-align: center;
+  }
+  
+  .aboutMeTechStack > h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #757575;
+  }
+  
+  .aboutMeTechStack > h1 {
+    font-size: 30px;
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  
+  .aboutMeTechStack > p {
+    max-width: 60vw;
+    margin: 0 auto;
+    padding-bottom: 8vh;
+    font-size: 16px;
+    color: #757575;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .aboutMeTechGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  
+  .aboutMeTechGrid:has(.aboutMeTechCard:hover) .aboutMeTechCard {
+    filter: blur(4px);
+    opacity: 0.6;
+    transition: .3s ease;
+  }
+  
+  .aboutMeTechGrid:has(.aboutMeTechCard:hover) .aboutMeTechCard:hover {
+    filter: blur(0);
+    opacity: 1;
+  }
+  
+  .aboutMeTechCard {
+    background: var(--light);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 32px;
+    padding: 28px;
+    backdrop-filter: blur(20px);
+    transition: .3s ease;
+  }
+  
+  .aboutMeTechCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.50);
+  }
+  
+  .aboutMeTechCard h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  
+  .aboutMeTechItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .aboutMeTechItems span {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.30);
+    border: 1px solid rgba(255,255,255,0.50);
+    font-size: .9rem;
+    transition: .25s ease;
+  }
+  
+  .aboutMeTechItems span:hover {
+    background: rgba(255,255,255,0.70);
+    transform: scale(1.05);
+  }
+  
+  /* Quotes Section */
+  .aboutMeQuote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 10vw;
+  }
+  
+  .aboutMeBoxQuote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    background: var(--dark);
+    border-radius: 25px;
+    padding: 60px 10vw;
+  }
+  
+  .aboutMeBoxQuote h1 {
+    font-size: 40vh;
+    line-height: 0.8;
+    margin: 0;
+    color: var(--gray-dark);
+    text-align: center;
+  }
+  
+  .aboutMeBoxQuote h2 {
+    font-size: 30px;
+    line-height: 1;
+    margin: -5vh 0 20px;
+    color: var(--light);
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .aboutMeBoxQuote p {
+    max-width: 700px;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--gray-light);
+    margin: 0;
+  }
+  
+  
+  
+}

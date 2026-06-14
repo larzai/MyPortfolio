@@ -1,0 +1,551 @@
+.page {
+  --dark: #17191b;
+  --soft-dark: #414447;
+  --light: #FEFEFE;
+  --light2: #F5F5F5;
+
+  --primary: #D0E505;
+
+  --gray-dark: #1F2937;
+  --gray: #7a7a7a;
+  --gray-light: #D1D5DB;
+
+  --bg-soft: #0A0A0A;   /* versi dark dikit */
+  --card: #111827;      /* buat card */
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--light);
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 719px) {
+  .underline {
+    width: 20%;
+    height: 2px;
+    background-color: #fff;
+  }
+  
+    /* Main Content */
+  .hero {
+    height: 100vh;
+  }
+  
+  /* List Container Item Hero */
+  .hero .backGround {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    z-index: 1;
+  }
+  
+  .hero .optionHero {
+    display: none;
+  }
+  
+  /* Background Content */
+  .hero .backGround .mainWrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .hero .backGround .mainWrapper .gridContainerDex {
+    display: none;
+  }
+  
+  .hero .backGround .mainWrapper .gridContainerMobile {
+    width: 100vw;
+    height: 100vh;
+    color: var(--dark);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 15vh);
+    border-top: 0.6px solid #222222;
+    border-left: 0.6px solid #222222;
+  }
+  
+  .hero .backGround .mainWrapper .gridItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 0.6px solid #222222;
+    border-bottom: 0.6px solid #222222;
+    background-color: #ffffff;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .hero .backGround .mainWrapper .gridItem img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero .backGround .mainWrapper .gridItem video {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Option Hero Content*/
+  .hero .optionHero .linkButton {
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  
+  .hero .optionHero .linkButton a {
+    color: var(--dark);
+    font-size: 25px;
+    pointer-events: auto;
+  }
+  
+  .link1 { justify-self: start; align-self: start; }
+  .link2 { justify-self: end; align-self: start; }
+  .link3 { justify-self: start; align-self: end; }
+  .link4 { justify-self: end; align-self: end; }
+  
+  /* More Contact */
+  .contactMe {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+  
+  .leftContactMe {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .leftContactMe h2 {
+    font-size: 50vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-scotch);
+    font-weight: 500;
+    text-align: center;
+  }
+  
+
+  .leftContactMe h3 {
+    font-size: 17vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .leftContactMe h4 {
+    font-size: 5vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-montserrat);
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .leftContactMe .contactMeCredits {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5vw;
+  }
+  
+  .leftContactMe .contactMeCredits p {
+    font-size: 1vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+  }
+  
+  
+  .rightContactMe {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5vw;
+    padding-top: 5vw;
+  }
+  
+  .rightContactMe h2 {
+    font-size: 5vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-scotch);
+    font-weight: 300;
+    border-bottom: 1px solid var(--dark);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .rightContactMe .contactMeSocial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  
+  .rightContactMe .contactMeSocial a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 4vw;
+    color: var(--dark);
+  }
+  
+  .rightContactMe .contactMeSocial a span {
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .rightContactMe .contactMeSocial a:hover span {
+    transform: translateX(10px);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .rightContactMe .contactMeForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .rightContactMe .contactMeForm form input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    background: none;
+    font-size: 6vw;
+    font-family: var(--font-montserrat);
+    color: var(--dark);
+  }
+  
+  .rightContactMe .contactMeForm form textarea {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    background: none;
+    font-size: 6vw;
+    min-height: 15vh;
+    font-family: var(--font-montserrat);
+    color: var(--dark);
+  }
+  
+  .rightContactMe .contactMeForm form button {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    background-color: var(--dark);
+    font-size: 5vw;
+    padding: 15px 5px;
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .rightContactMe .contactMeForm form button:hover {
+    background-color: var(--gray);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  
+  
+}
+
+/* Tablet & Komputer */
+@media (min-width: 720px) {
+  .underline {
+    width: 5vw;
+    height: 2px;
+    background-color: #fff;
+  }
+  
+  /* Main Content */
+  .hero {
+    height: 100vh;
+  }
+  
+  /* List Container Item Hero */
+  .hero .backGround {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    z-index: 1;
+  }
+  
+  .hero .optionHero {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  /* Background Content */
+  .hero .backGround .mainWrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .hero .backGround .mainWrapper .gridContainerMobile {
+    display: none;
+  }
+  
+  .hero .backGround .mainWrapper .gridContainerDex {
+    width: 100vw;
+    height: 100vh;
+    color: var(--dark);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 25vh);
+    border-top: 0.6px solid #222222;
+    border-left: 0.6px solid #222222;
+  }
+  
+  .hero .backGround .mainWrapper .gridItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 0.6px solid #222222;
+    border-bottom: 0.6px solid #222222;
+    background-color: #ffffff;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .hero .backGround .mainWrapper .gridItem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .hero .backGround .mainWrapper .gridItem video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Option Hero Content*/
+  .hero .optionHero .linkButton {
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  
+  .hero .optionHero .linkButton a {
+    color: var(--dark);
+    font-size: 25px;
+    pointer-events: auto;
+  }
+  
+  .link1 { justify-self: start; align-self: start; }
+  .link2 { justify-self: end; align-self: start; }
+  .link3 { justify-self: start; align-self: end; }
+  .link4 { justify-self: end; align-self: end; }
+  
+  /* More Contact */
+  .contactMe {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+  }
+  
+  .leftContactMe {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .leftContactMe h2 {
+    font-size: 25vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-scotch);
+    font-weight: 500;
+  }
+  
+
+  .leftContactMe h3 {
+    font-size: 9vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+  }
+  
+  .leftContactMe h4 {
+    font-size: 3vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-montserrat);
+    font-weight: 500;
+  }
+  
+  .leftContactMe .contactMeCredits {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .leftContactMe .contactMeCredits p {
+    font-size: 1vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+  }
+  
+  
+  .rightContactMe {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5vw;
+  }
+  
+  .rightContactMe h2 {
+    font-size: 5vw; 
+    white-space: nowrap;
+    line-height: 1;
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-scotch);
+    font-weight: 300;
+    border-bottom: 1px solid var(--dark);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .rightContactMe .contactMeSocial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  
+  .rightContactMe .contactMeSocial a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 2vw;
+    color: var(--dark);
+  }
+  
+  .rightContactMe .contactMeSocial a span {
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .rightContactMe .contactMeSocial a:hover span {
+    transform: translateX(10px);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .rightContactMe .contactMeForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .rightContactMe .contactMeForm form input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    background: none;
+    font-size: 3vw;
+    font-family: var(--font-montserrat);
+    color: var(--dark);
+  }
+  
+  .rightContactMe .contactMeForm form textarea {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    background: none;
+    font-size: 3vw;
+    min-height: 15vh;
+    font-family: var(--font-montserrat);
+    color: var(--dark);
+  }
+  
+  .rightContactMe .contactMeForm form button {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    background-color: var(--dark);
+    font-size: 2vw;
+    padding: 15px 5px;
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .rightContactMe .contactMeForm form button:hover {
+    background-color: var(--gray);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  
+}

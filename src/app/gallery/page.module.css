@@ -1,0 +1,524 @@
+.page {
+  --dark: #17191b;
+  --soft-dark: #414447;
+  --light: #FEFEFE;
+  --light2: #F5F5F5;
+
+  --primary: #D0E505;
+
+  --gray-dark: #1F2937;
+  --gray: #7a7a7a;
+  --gray-light: #D1D5DB;
+
+  --bg-soft: #0A0A0A;   /* versi dark dikit */
+  --card: #111827;      /* buat card */
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--light);
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 719px) {
+  .underline {
+    width: 20%;
+    height: 2px;
+    background-color: #fff;
+  }
+  
+    /* Main Content */
+  .hero {
+    height: 100vh;
+  }
+  
+  /* List Container Item Hero */
+  .hero .backGround {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    z-index: 1;
+  }
+  
+  .hero .optionHero {
+    display: none;
+  }
+  
+  /* Background Content */
+  .hero .backGround .mainWrapper {
+    width: 100vw;
+    height: 100vh;
+    padding: 35px 25px;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec > h1 {
+    font-family: var(--font-montserrat);
+    font-weight: medium;
+    font-size: 8vw;
+    text-transform: uppercase;
+    display: block;
+    margin: 0;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(2vw);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec.reverse {
+    flex-direction: row-reverse;
+    transform: translateY(-2vw);
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec h1 {
+    font-family: var(--font-scotch);
+    font-weight: normal;
+    font-size: 8vw;
+    margin: 0;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec .box {
+    width: 25vw;
+    height: 6vw;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--primary)
+    );
+    margin: 0;
+    padding: 0;
+    opacity: 0.7;
+    animation: galleryTextHeroDecBox 3s linear infinite;
+  }
+  
+  @keyframes galleryTextHeroDecBox {
+    0% {
+      width: 25vw;
+      opacity: 0.7;
+    }
+    50% {
+      width: 15vw;
+      opacity: 1;
+    }
+    100% {
+      width: 25vw;
+      opacity: 0.7;
+    }
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec.reverse .box {
+    background: linear-gradient(
+      to left,
+      transparent,
+      var(--primary)
+    );
+  }
+  
+  /* Option Hero Content*/
+  .hero .optionHero .linkButton {
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  
+  .hero .optionHero .linkButton a {
+    color: var(--dark);
+    font-size: 25px;
+    pointer-events: auto;
+  }
+  
+  .link1 { justify-self: start; align-self: start; }
+  .link2 { justify-self: end; align-self: start; }
+  .link3 { justify-self: start; align-self: end; }
+  .link4 { justify-self: end; align-self: end; }
+  
+  /* More Gallery */
+  .galleryTop {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 5vh;
+  }
+  
+  .galleryTop h1 {
+    font-size: 10vw;
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  
+  /* Gallery Items */
+  .galleryItems {
+    width: 100%;
+    padding: 120px 10vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .galleryItemsContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent {
+    background: var(--light2);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #00000060;
+    transition: all 1.5s ease-in-out;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent:active {
+    transform: scale(1.2);
+  }
+  
+  .galleryItemsContainer .galleryItemsContent img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption {
+    padding: 25px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption p {
+    color: var(--gray);
+    font-size: 14px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption h2 {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .showMore {
+    max-width: 70vw;
+    position: relative;
+    display: inline-block;
+    margin: 50px 15px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--soft-dark);
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 0 var(--primary);
+  }
+  
+  .showMore:hover {
+    color: var(--soft-dark);
+    box-shadow: inset 0 -100px 0 0 var(--primary);
+  }
+  
+  .showMore:active {
+    transform: scale(0.9);
+  }
+  
+  .showMore:disabled {
+    cursor: not-allowed;
+    border: 2px solid var(--soft-dark);
+    box-shadow: inset 0 0 0 0 var(--soft-dark);
+  }
+  
+  
+}
+
+/* Tablet & Komputer */
+@media (min-width: 720px) {
+  .underline {
+    width: 5vw;
+    height: 2px;
+    background-color: #fff;
+  }
+  
+  /* Main Content */
+  .hero {
+    height: 100vh;
+  }
+  
+  /* List Container Item Hero */
+  .hero .backGround {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    z-index: 1;
+  }
+  
+  .hero .optionHero {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  /* Background Content */
+  .hero .backGround .mainWrapper {
+    width: 100vw;
+    height: 100vh;
+    padding: 35px 25px;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec > h1 {
+    font-family: var(--font-montserrat);
+    font-weight: medium;
+    font-size: 8vw;
+    text-transform: uppercase;
+    display: block;
+    margin: 0;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(2vw);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec.reverse {
+    flex-direction: row-reverse;
+    transform: translateY(-2vw);
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec h1 {
+    font-family: var(--font-scotch);
+    font-weight: normal;
+    font-size: 8vw;
+    margin: 0;
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec .box {
+    width: 25vw;
+    height: 6vw;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--primary)
+    );
+    margin: 0;
+    padding: 0;
+    opacity: 0.7;
+    animation: galleryTextHeroDecBox 3s linear infinite;
+  }
+  
+  @keyframes galleryTextHeroDecBox {
+    0% {
+      width: 25vw;
+      opacity: 0.7;
+    }
+    50% {
+      width: 15vw;
+      opacity: 1;
+    }
+    100% {
+      width: 25vw;
+      opacity: 0.7;
+    }
+  }
+  
+  .hero .backGround .mainWrapper .galleryHeroDec .galleryTextHeroDec.reverse .box {
+    background: linear-gradient(
+      to left,
+      transparent,
+      var(--primary)
+    );
+  }
+  
+  /* Option Hero Content*/
+  .hero .optionHero .linkButton {
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  
+  .hero .optionHero .linkButton a {
+    color: var(--dark);
+    font-size: 25px;
+    pointer-events: auto;
+  }
+  
+  .link1 { justify-self: start; align-self: start; }
+  .link2 { justify-self: end; align-self: start; }
+  .link3 { justify-self: start; align-self: end; }
+  .link4 { justify-self: end; align-self: end; }
+  
+  /* More Gallery */
+  .galleryTop {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 5vh;
+  }
+  
+  .galleryTop h1 {
+    font-size: 10vw;
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  
+  /* Gallery Items */
+  .galleryItems {
+    width: 100%;
+    padding: 120px 10vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .galleryItemsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent {
+    background: var(--light2);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #00000060;
+    transition: all 1.5s ease-in-out;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent:active {
+    transform: scale(1.4);
+  }
+  
+  .galleryItemsContainer .galleryItemsContent img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption {
+    padding: 25px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption a {
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 400;
+    padding: 2px 15px;
+    background: transparent;
+    border: 1px solid var(--dark);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption a:hover {
+    color: var(--light2);
+    background: var(--dark);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption p {
+    color: var(--gray);
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .galleryItemsContainer .galleryItemsContent .caption h2 {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .showMore {
+    max-width: 30vw;
+    position: relative;
+    display: inline-block;
+    margin: 50px 15px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--soft-dark);
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 0 var(--primary);
+  }
+  
+  .showMore:hover {
+    color: var(--soft-dark);
+    box-shadow: inset 0 -100px 0 0 var(--primary);
+  }
+  
+  .showMore:active {
+    transform: scale(0.9);
+  }
+  
+  .showMore:disabled {
+    cursor: not-allowed;
+    border: 2px solid var(--soft-dark);
+    box-shadow: inset 0 0 0 0 var(--soft-dark);
+  }
+  
+}
