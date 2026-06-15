@@ -334,21 +334,21 @@
   }
   
   .homeSelf .homeSelfBottom p {
-    font-size: 0.8vw;
+    font-size: 1.4vw;
     font-family: var(--font-montserrat);
     font-weight: 400;
     text-align: left;
     margin-top: 10px;
-    max-width: 15vw;
+    max-width: 20vw;
   }
   
   .homeSelf .homeSelfBottom p:last-child {
-    font-size: 0.8vw;
+    font-size: 1.4vw;
     font-family: var(--font-montserrat);
     font-weight: 400;
     text-align: right;
     margin-top: 10px;
-    max-width: 15vw;
+    max-width: 20vw;
   }
   
   .homeSelf .homeSelfBottom .star10 {
@@ -749,7 +749,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-    height: 110vh;
+    min-height: 110vh;
     padding: 120px 10vw;
     color: var(--dark);
   }
@@ -773,7 +773,7 @@
   }
   
   .homeSelf .homeSelfCenter h1 {
-    font-size: 10vw;
+    font-size: 8vw;
     font-family: var(--font-SEGO);
     font-weight: 500;
     text-align: center;
@@ -797,21 +797,21 @@
   }
   
   .homeSelf .homeSelfBottom p {
-    font-size: 0.8vw;
+    font-size: 1.2vw;
     font-family: var(--font-montserrat);
     font-weight: 400;
     text-align: left;
     margin-top: 10px;
-    max-width: 15vw;
+    max-width: 25vw;
   }
   
   .homeSelf .homeSelfBottom p:last-child {
-    font-size: 0.8vw;
+    font-size: 1.2vw;
     font-family: var(--font-montserrat);
     font-weight: 400;
     text-align: right;
     margin-top: 10px;
-    max-width: 15vw;
+    max-width: 25vw;
   }
   
   .homeSelf .homeSelfBottom .star10 {
@@ -856,7 +856,7 @@
   }
   
   .homeBestProject h1 {
-    font-size: 10vw;
+    font-size: 8vw;
     font-family: var(--font-montserrat);
     font-weight: 500;
     text-align: left;
@@ -865,7 +865,7 @@
   }
   
   .homeBestProject h1 span {
-    font-size: 10vw;
+    font-size: 8vw;
     font-family: var(--font-betterSaturday);
     font-weight: 500;
     text-align: left;
