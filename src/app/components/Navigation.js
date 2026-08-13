@@ -29,10 +29,15 @@ export default function Navigation() {
     
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleNavClick = (path) => {
+    setActiveDex(false)
+    setActiveMobile(false)
+    go(path)
+  }
   
   return (
-    <nav className={styles.nav}>
-    {/* Desktop */}  
+    <nav className={styles.nav}>  
       {GlassSurface && (
       <GlassSurface
         className={`
@@ -52,19 +57,19 @@ export default function Navigation() {
         </div>
         <hr />
         <div className={styles.navDexMenu}>
-          <a onClick={() => go("/")}>
+          <a onClick={() => handleNavClick("/")}>
             <span className={styles.top}>Home</span>  
             <span className={styles.bottom}>Home</span>  
           </a>  
-          <a onClick={() => go("/about")}>
+          <a onClick={() => handleNavClick("/about")}>
             <span className={styles.top}>About</span>
             <span className={styles.bottom}>About</span>  
           </a>
-            <a onClick={() => go("/gallery")}>
+            <a onClick={() => handleNavClick("/gallery")}>
             <span className={styles.top}>Gallery</span>  
             <span className={styles.bottom}>Gallery</span>  
           </a>  
-          <a onClick={() => go("/contact")}>
+          <a onClick={() => handleNavClick("/contact")}>
             <span className={styles.top}>Contact</span>  
             <span className={styles.bottom}>Contact</span>  
           </a>
@@ -74,8 +79,7 @@ export default function Navigation() {
           </select>
         </div>
       </GlassSurface>
-      )}
-      {/* Mobile */}  
+      )} 
       <aside className={`${styles.navMobile} ${activeMobile ? styles.active : ''}`}>  
         <button  
           className={styles.navMobileButton}  
@@ -84,19 +88,19 @@ export default function Navigation() {
           {activeMobile ? '×' : '☰'}  
         </button>  
         <div className={styles.navMobileMenu}>  
-          <a onClick={() => go("/")}>
+          <a onClick={() => handleNavClick("/")}>
             <span className={styles.top}>Home</span>  
             <span className={styles.bottom}>Home</span>  
           </a>  
-          <a onClick={() => go("/about")}>
+          <a onClick={() => handleNavClick("/about")}>
             <span className={styles.top}>About</span>
             <span className={styles.bottom}>About</span>  
           </a>
-            <a onClick={() => go("/gallery")}>
+            <a onClick={() => handleNavClick("/gallery")}>
             <span className={styles.top}>Gallery</span>  
             <span className={styles.bottom}>Gallery</span>  
           </a>  
-          <a onClick={() => go("/contact")}>
+          <a onClick={() => handleNavClick("/contact")}>
             <span className={styles.top}>Contact</span>  
             <span className={styles.bottom}>Contact</span>  
           </a>

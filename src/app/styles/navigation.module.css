@@ -1,3 +1,4 @@
+
 .nav {
   position: fixed;
   top: 0;
@@ -141,7 +142,6 @@
     overflow: hidden;
     padding: 10px;
     border-radius: 20px;
-    background: #ffffff50;
     border: 2px solid #77777715;
     display: flex;
     flex-direction: column;
@@ -175,7 +175,7 @@
   .navDexTop h1 {
     font-size: 40px;
     letter-spacing: 3px;
-    color: #17191b;
+    color: #94a30d;
   }
   
   .navDexTop .navDexButton {
@@ -210,11 +210,10 @@
   
   .navDexMenu a {
     position: relative;
-    width: fit-content;
     height: 25px;
     overflow: hidden;
     text-decoration: none;
-    color: #00000050;
+    color: rgb(0, 0, 0, 0.5);
     font-size: 24px;
     font-weight: 700;
   }

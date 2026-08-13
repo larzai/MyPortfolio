@@ -56,10 +56,10 @@ export default function Gallery() {
           </div>
           <div className={styles.optionHero}>
             <div className={styles.linkButton}>
-              <a className={styles.link1} onClick={() => go("/")}>Home</a>
-              <a className={styles.link2} onClick={() => go("/about")}>About</a>
-              <a className={styles.link3} onClick={() => go("/gallery")}>Galery</a>
-              <a className={styles.link4} onClick={() => go("/contact")}>Contact</a>
+              <a className={styles.link1} onClick={() => go("/")}>HOME</a>
+              <a className={styles.link2} onClick={() => go("/about")}>ABOUT</a>
+              <a className={styles.link3} onClick={() => go("/gallery")}>GALLERY</a>
+              <a className={styles.link4} onClick={() => go("/contact")}>CONTACT</a>
             </div>
           </div>
         </section>
