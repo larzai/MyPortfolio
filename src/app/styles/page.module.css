@@ -64,6 +64,10 @@
     display: none;
   }
   
+  .hero .cursorTrack {
+    display: none;
+  }
+  
   /* Background Content */
   .hero .backGround .mainWrapper {
     position: relative;
@@ -493,7 +497,19 @@
   
   /* Main Content */
   .hero {
+    position: relative;
     height: 100vh;
+  }
+  
+  .hero .cursorTrack {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgb(0, 0 ,0 , 0.2);
+    backdrop-filter: blur(12px);
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
   }
   
   /* List Container Item Hero */
@@ -513,7 +529,7 @@
     width: 100vw;
     height: 100vh;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
   }
   

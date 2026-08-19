@@ -58,20 +58,36 @@ export default function Navigation() {
         <hr />
         <div className={styles.navDexMenu}>
           <a onClick={() => handleNavClick("/")}>
-            <span className={styles.top}>Home</span>  
-            <span className={styles.bottom}>Home</span>  
+            <span className={styles.top}>
+              {"HOME".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
+            <span className={styles.bottom}>
+              {"HOME".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
           </a>  
           <a onClick={() => handleNavClick("/about")}>
-            <span className={styles.top}>About</span>
-            <span className={styles.bottom}>About</span>  
+            <span className={styles.top}>
+              {"ABOUT".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>
+            <span className={styles.bottom}>
+              {"ABOUT".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
           </a>
-            <a onClick={() => handleNavClick("/gallery")}>
-            <span className={styles.top}>Gallery</span>  
-            <span className={styles.bottom}>Gallery</span>  
+          <a onClick={() => handleNavClick("/gallery")}>
+            <span className={styles.top}>
+              {"GALLERY".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
+            <span className={styles.bottom}>
+              {"GALLERY".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
           </a>  
           <a onClick={() => handleNavClick("/contact")}>
-            <span className={styles.top}>Contact</span>  
-            <span className={styles.bottom}>Contact</span>  
+            <span className={styles.top}>
+              {"CONTACT".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
+            <span className={styles.bottom}>
+              {"CONTACT".split("").map((char, i) => <span key={i}>{char}</span>)}
+            </span>  
           </a>
           <select value={lang} onChange={(e) => setLang(e.target.value)}>
             <option value="id">Indonesia</option>
@@ -89,20 +105,20 @@ export default function Navigation() {
         </button>  
         <div className={styles.navMobileMenu}>  
           <a onClick={() => handleNavClick("/")}>
-            <span className={styles.top}>Home</span>  
-            <span className={styles.bottom}>Home</span>  
+            <span className={styles.top}>HOME</span>  
+            <span className={styles.bottom}>HOME</span>  
           </a>  
           <a onClick={() => handleNavClick("/about")}>
-            <span className={styles.top}>About</span>
-            <span className={styles.bottom}>About</span>  
+            <span className={styles.top}>ABOUT</span>
+            <span className={styles.bottom}>ABOUT</span>  
           </a>
-            <a onClick={() => handleNavClick("/gallery")}>
-            <span className={styles.top}>Gallery</span>  
-            <span className={styles.bottom}>Gallery</span>  
+          <a onClick={() => handleNavClick("/gallery")}>
+            <span className={styles.top}>GALLERY</span>  
+            <span className={styles.bottom}>GALLERY</span>  
           </a>  
           <a onClick={() => handleNavClick("/contact")}>
-            <span className={styles.top}>Contact</span>  
-            <span className={styles.bottom}>Contact</span>  
+            <span className={styles.top}>CONTACT</span>  
+            <span className={styles.bottom}>CONTACT</span>  
           </a>
           <select value={lang} onChange={(e) => setLang(e.target.value)}>
             <option value="id">Indonesia</option>

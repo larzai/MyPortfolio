@@ -21,6 +21,7 @@ export default function Home() {
   const aboutRef = useRef(null)
   
   const [index, setIndex] = useState(0)
+  const [mouseTrack, setMouseTrack] = useState({ x: 0, y: 0 })
   const [radiusIntroVH, setRadiusIntroVH] = useState(0)
   const [circleHeight, setCircleHeight] = useState(30)
   const [blur, setBlur] = useState(false);
@@ -52,7 +53,7 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll)
     
     const loop = () => {
-      const delay = Math.random() * 5000 + 4000
+      const delay = Math.random() * 8000 + 6000
       
       timeoutRef.current = setTimeout(() => {
         setBlur(true)
@@ -76,14 +77,22 @@ export default function Home() {
     <div className={styles.page}>
       <Intro />
       <main className={styles.main}>
-        <section className={styles.hero}>
+        <section
+          onMouseMove={(e) => {
+            setMouseTrack({
+              x: e.clientX,
+              y: e.clientY,
+            })
+          }}
+          className={styles.hero}
+        >
           <div
-              className={styles.backGround}
-              style={{
-                filter: blur ? "blur(8px)" : "blur(0px)",
-                transition: "filter 0.5s ease",
-              }}
-            >
+            className={styles.backGround}
+            style={{
+              filter: blur ? "blur(8px)" : "blur(0px)",
+              transition: "filter 0.5s ease",
+            }}
+          >
             <div className={styles.mainWrapper}>
               <span className={styles.labelTop}>{t.greet}</span>
               <h1 className={styles.rifaldo}>RIFALDO</h1>
@@ -99,6 +108,13 @@ export default function Home() {
               <a className={styles.link4} onClick={() => go("/contact")}>CONTACT</a>
             </div>
           </div>
+          <div
+            className={styles.cursorTrack}
+            style={{
+              left: mouseTrack.x,
+              top: mouseTrack.y,
+            }}
+          />
         </section>
         <div
           className={styles.homeAboutCircle}
