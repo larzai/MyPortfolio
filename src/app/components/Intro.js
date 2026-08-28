@@ -21,7 +21,7 @@ export default function Intro() {
 
   const [step, setStep] = useState(0)
   const [youIndex, setYouIndex] = useState(0)
-  const [introVH, setIntroVH] = useState(100)
+  const [introVH, setIntroVH] = useState(0)
   const [radiusIntroVH, setRadiusIntroVH] = useState(0)
 
   useEffect(() => {
