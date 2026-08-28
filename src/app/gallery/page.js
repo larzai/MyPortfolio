@@ -208,7 +208,7 @@ export default function Gallery() {
               <div className={styles.emptyIcon}>⌕</div>
               <h2>Tidak ditemukan</h2>
               <p>
-                Tidak ada karya yang cocok dengan pencarian lu.
+                Tidak ada karya yang cocok dengan pencarian.
               </p>
             </div>
           )}
