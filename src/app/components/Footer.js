@@ -46,7 +46,7 @@ export default function Footer() {
           <div className={styles.bottom}>
             <div className={styles.cta}>
               <h1 className={styles.talk}>Let’s Talk</h1>
-              <p>Got an idea? let’s build it.</p>
+              <p>GOT AN IDEA? LET’S BUILD IT.</p>
             </div>
             <div className={styles.lang}>
               <button onClick={() => setLang(lang === 'id' ? 'en' : 'id')}>

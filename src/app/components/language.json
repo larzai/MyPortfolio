@@ -1,7 +1,7 @@
 {
   "en": {
     
-    
+    "greetU": "Hello, Wellcome!",
     "greet": "HELLO, MY NAME IS",
     "welcome": "WELLCOME TO MY PORTFOLIO",
     "homeAbout": "I am a vocational high school student with a strong interest in technology and digital development. I started learning coding in 6th grade through HTML and continue improving my skills through web development, interface design, videography, photography, and personal technology projects.",
@@ -74,7 +74,7 @@
   
   "id": {
     
-    
+    "greetU": "Halo, Selamat Datang!",
     "greet": "HAI, NAMA SAYA",
     "welcome": "SELAMAT DATANG DI PORTOFOLIO SAYA",
     "homeAbout": "Saya adalah siswa SMK dengan minat yang kuat dalam teknologi dan pengembangan digital. Saya mulai belajar coding sejak kelas 6 melalui HTML dan terus mengembangkan keterampilan saya dalam pengembangan web, desain antarmuka, videografi, fotografi, serta proyek-proyek teknologi pribadi.",

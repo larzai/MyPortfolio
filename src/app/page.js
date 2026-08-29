@@ -12,6 +12,8 @@ import { useTransition } from "@/components/Transition"
 import { useLang } from "./context/LangContext"
 import Stack from "./components/Stack"
 import Intro from "@/components/Intro.js"
+import lyn from "@@/lib/notification.js"
+import lynstyle from "@@/lib/notification.css"
 
 export default function Home() {
   const { go } = useTransition()
@@ -51,9 +53,17 @@ export default function Home() {
     }
     
     window.addEventListener("scroll", handleScroll)
+
+    setTimeout(() => {
+      lyn.dynamicIsland({
+        Status: "default",
+        Mess: t.greetU,
+        Label: "info"
+      });
+    }, 5500);
     
     const loop = () => {
-      const delay = Math.random() * 8000 + 6000
+      const delay = Math.random() * 6000 + 4000
       
       timeoutRef.current = setTimeout(() => {
         setBlur(true)

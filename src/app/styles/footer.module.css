@@ -66,13 +66,14 @@
 
 .footer > .container > .bottom > .cta > .talk {
   font-family: var(--font-scotch);
-  font-size: 72px;
+  font-size: 10rem;
   margin: 0;
   line-height: 1;
 }
 
 .footer > .container > .bottom > .cta > p {
-  margin-top: 10px;
+  margin-top: 13px;
+  letter-spacing: 10px;
   color: #666;
 }
 
@@ -115,6 +116,10 @@
 
   .footer > .container > .bottom > .cta > .talk {
     font-size: 50vw;
+  }
+  
+  .footer > .container > .bottom > .cta > .p {
+    letter-spacing: 0px;
   }
 
   .footer > .container > .bottom > .lang {

@@ -198,59 +198,128 @@ export default function About() {
             <div className={styles.aboutMeTechCard}>
               <h2>Front-End Development</h2>
               <div className={styles.aboutMeTechItems}>
-                <span>React</span>
-                <span>Next.js</span>
-                <span>JavaScript</span>
-                <span>HTML</span>
-                <span>CSS</span>
+                <span>
+                  <div style={{ backgroundColor: "#256095" }}></div>
+                  React
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#6e6e6e" }}></div>
+                  Next.js
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#e6e21f" }}></div>
+                  JavaScript
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#d86636" }}></div>
+                  HTML
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#256095" }}></div>
+                  CSS
+                </span>
               </div>
             </div>
         
             <div className={styles.aboutMeTechCard}>
               <h2>Back-End Development</h2>
               <div className={styles.aboutMeTechItems}>
-                <span>Node.js</span>
-                <span>Express.js</span>
-                <span>REST API</span>
-                <span>MySQL</span>
+                <span>
+                  <div style={{ backgroundColor: "#508a44" }}></div>
+                  Node.js
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#6a6a6a" }}></div>
+                  Express.js
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#813416" }}></div>
+                  REST API
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#b88b1b" }}></div>
+                  MySQL
+                </span>
               </div>
             </div>
         
             <div className={styles.aboutMeTechCard}>
               <h2>Product Design</h2>
               <div className={styles.aboutMeTechItems}>
-                <span>Figma</span>
-                <span>UI Design</span>
-                <span>UX Research</span>
-                <span>Wireframing</span>
+                <span>
+                  <div style={{ backgroundColor: "#cfeb4f" }}></div>
+                  Figma
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#c027bd" }}></div>
+                  UI Design
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#953025" }}></div>
+                  UX Research
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#e1e92e" }}></div>
+                  Wireframing
+                </span>
               </div>
             </div>
         
             <div className={styles.aboutMeTechCard}>
               <h2>IoT & Electronics</h2>
               <div className={styles.aboutMeTechItems}>
-                <span>Arduino</span>
-                <span>Sensors</span>
-                <span>Embedded Systems</span>
-                <span>Hardware Integration</span>
+                <span>
+                  <div style={{ backgroundColor: "#4178c5" }}></div>
+                  Arduino
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#256095" }}></div>
+                  Sensors
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#5b5b5b" }}></div>
+                  Embedded Systems
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#952525" }}></div>
+                  Hardware Integration
+                </span>
               </div>
             </div>
         
             <div className={styles.aboutMeTechCard}>
               <h2>Creative Media</h2>
               <div className={styles.aboutMeTechItems}>
-                <span>Photography</span>
-                <span>Videography</span>
-                <span>Editing</span>
-                <span>Content Creation</span>
+                <span>
+                  <div style={{ backgroundColor: "#80d279" }}></div>
+                  Photography
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#78613f" }}></div>
+                  Videography
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#3783c6" }}></div>
+                  Editing
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#b265ca" }}></div>
+                  Content Creation
+                </span>
               </div>
             </div>
         
             <div className={styles.aboutMeTechCard}>
               <h2>Tools & Workflow</h2>
               <div className={styles.aboutMeTechItems}>
-                <span>Git</span>
-                <span>GitHub</span>
+                <span>
+                  <div style={{ backgroundColor: "#9a553c" }}></div>
+                  Git
+                </span>
+                <span>
+                  <div style={{ backgroundColor: "#6f6f6f" }}></div>
+                  GitHub
+                </span>
               </div>
             </div>
           </motion.div>
