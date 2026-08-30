@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.40.0",
-    "lyraxis-notification": "^1.0.5",
+    "lycaxia-notification": "^1.0.0",
     "motion": "^12.40.0",
     "next": "16.2.4",
     "ogl": "^1.0.11",

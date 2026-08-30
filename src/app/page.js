@@ -10,7 +10,7 @@ import { useTransition } from '@/components/Transition'
 import { useLang } from './context/LangContext'
 import Stack from './components/Stack'
 import Intro from '@/components/Intro.js'
-import Lyn from 'lyraxis-notification'
+import lyn from 'lycaxia-notification'
 
 export default function Home() {
   const { go } = useTransition()
@@ -38,6 +38,8 @@ export default function Home() {
   ]
 
   useEffect(() => {
+    lyn.soundNotification("allow");
+    
     const handleScroll = () => {
       if (!aboutRef.current) return
 
@@ -57,8 +59,8 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll)
 
     notificationRef.current = setTimeout(() => {
-      if (Lyn?.dynamicIsland) {
-        Lyn.dynamicIsland({
+      if (lyn?.dynamicIsland) {
+        lyn.dynamicIsland({
           Status: 'default',
           Mess: t.greetU,
           Label: 'info'
