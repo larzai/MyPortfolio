@@ -382,6 +382,7 @@ function WorkCard({ data, t }) {
           </div>
 
           <h2>{data.title}</h2>
+          <p>{data.description}</p>
 
           {Array.isArray(data.technology) &&
             data.technology.length > 0 && (

@@ -21,11 +21,8 @@ export default function Home() {
   const timeoutRef = useRef(null)
   const notificationRef = useRef(null)
   const blurTimeoutRef = useRef(null)
-
-  const [mouseTrack, setMouseTrack] = useState({
-    x: 0,
-    y: 0
-  })
+  const cursorRef = useRef(null)
+  const heroRef = useRef(null)
 
   const [circleHeight, setCircleHeight] = useState(30)
   const [blur, setBlur] = useState(false)
@@ -38,8 +35,60 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    lyn.soundNotification("allow");
-    
+    const hero = heroRef.current
+    const cursor = cursorRef.current
+
+    if (!hero || !cursor) return
+
+    let animationFrame
+    let mouseX = 0
+    let mouseY = 0
+    let currentX = 0
+    let currentY = 0
+    let visible = false
+
+    const handleMouseMove = (e) => {
+      const rect = hero.getBoundingClientRect()
+
+      mouseX = e.clientX - rect.left
+      mouseY = e.clientY - rect.top
+
+      visible = true
+      cursor.style.opacity = '1'
+    }
+
+    const handleMouseLeave = () => {
+      visible = false
+      cursor.style.opacity = '0'
+    }
+
+    const animate = () => {
+      if (visible) {
+        currentX += (mouseX - currentX) * 0.35
+        currentY += (mouseY - currentY) * 0.35
+
+        cursor.style.transform =
+          `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`
+      }
+
+      animationFrame = requestAnimationFrame(animate)
+    }
+
+    hero.addEventListener('mousemove', handleMouseMove)
+    hero.addEventListener('mouseleave', handleMouseLeave)
+
+    animationFrame = requestAnimationFrame(animate)
+
+    return () => {
+      hero.removeEventListener('mousemove', handleMouseMove)
+      hero.removeEventListener('mouseleave', handleMouseLeave)
+      cancelAnimationFrame(animationFrame)
+    }
+  }, [])
+
+  useEffect(() => {
+    lyn.soundNotification('allow')
+
     const handleScroll = () => {
       if (!aboutRef.current) return
 
@@ -85,7 +134,6 @@ export default function Home() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-
       clearTimeout(notificationRef.current)
       clearTimeout(timeoutRef.current)
       clearTimeout(blurTimeoutRef.current)
@@ -98,13 +146,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <section
+          ref={heroRef}
           className={styles.hero}
-          onMouseMove={(e) => {
-            setMouseTrack({
-              x: e.clientX,
-              y: e.clientY
-            })
-          }}
         >
           <div
             className={styles.backGround}
@@ -165,11 +208,8 @@ export default function Home() {
           </div>
 
           <div
+            ref={cursorRef}
             className={styles.cursorTrack}
-            style={{
-              left: mouseTrack.x,
-              top: mouseTrack.y
-            }}
           />
         </section>
 
@@ -196,49 +236,25 @@ export default function Home() {
 
         <section className={styles.homeExperience}>
           <motion.h2
-            initial={{
-              opacity: 0,
-              y: 20
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            transition={{
-              duration: 0.4
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
           >
             {t.homeExperienceTitle}
           </motion.h2>
 
           <motion.h1
-            initial={{
-              opacity: 0,
-              y: 20
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            transition={{
-              duration: 0.6
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
             {t.homeExperienceHeading}
           </motion.h1>
 
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 20
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            transition={{
-              duration: 0.8
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             {t.homeExperienceDescription}
           </motion.p>
@@ -250,21 +266,10 @@ export default function Home() {
 
               <motion.div
                 className={styles.content}
-                initial={{
-                  opacity: 0,
-                  x: 30
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0
-                }}
-                transition={{
-                  duration: 0.6
-                }}
-                viewport={{
-                  once: false,
-                  amount: 0.3
-                }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <span>2021</span>
                 <h3>{t.homeExperience2021}</h3>
@@ -278,21 +283,10 @@ export default function Home() {
 
               <motion.div
                 className={styles.content}
-                initial={{
-                  opacity: 0,
-                  x: -30
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0
-                }}
-                transition={{
-                  duration: 0.6
-                }}
-                viewport={{
-                  once: false,
-                  amount: 0.3
-                }}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <span>2022</span>
                 <h3>{t.homeExperience2022}</h3>
@@ -306,21 +300,10 @@ export default function Home() {
 
               <motion.div
                 className={styles.content}
-                initial={{
-                  opacity: 0,
-                  x: 30
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0
-                }}
-                transition={{
-                  duration: 0.6
-                }}
-                viewport={{
-                  once: false,
-                  amount: 0.3
-                }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <span>2023</span>
                 <h3>{t.homeExperience2023}</h3>
@@ -334,21 +317,10 @@ export default function Home() {
 
               <motion.div
                 className={styles.content}
-                initial={{
-                  opacity: 0,
-                  x: -30
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0
-                }}
-                transition={{
-                  duration: 0.6
-                }}
-                viewport={{
-                  once: false,
-                  amount: 0.3
-                }}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <span>2025</span>
                 <h3>{t.homeExperience2025}</h3>
@@ -366,33 +338,17 @@ export default function Home() {
 
           <div className={styles.homeSelfCenter}>
             <motion.h1
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.homeSelfTitle}
             </motion.h1>
 
             <motion.h2
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.homeSelfSubtitle}
             </motion.h2>
@@ -400,17 +356,9 @@ export default function Home() {
 
           <div className={styles.homeSelfBottom}>
             <motion.p
-              initial={{
-                opacity: 0,
-                x: -30
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.homeSelfParagraph1}
             </motion.p>
@@ -418,17 +366,9 @@ export default function Home() {
             <div className={styles.star10} />
 
             <motion.p
-              initial={{
-                opacity: 0,
-                x: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.homeSelfParagraph2}
             </motion.p>
@@ -437,24 +377,14 @@ export default function Home() {
 
         <section className={styles.homeBestProject}>
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -30
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0
-            }}
-            transition={{
-              duration: 0.6
-            }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
           >
             <h1>
               {t.homeBestProjectTitle1}
               <br />
-              <span>
-                {t.homeBestProjectTitle2}
-              </span>
+              <span>{t.homeBestProjectTitle2}</span>
               <br />
               {t.homeBestProjectTitle3}
             </h1>
@@ -463,17 +393,9 @@ export default function Home() {
           <div className={styles.homeBestProjectGallery}>
             <motion.a
               onClick={() => go('/gallery')}
-              initial={{
-                opacity: 0,
-                x: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.buttonHomeProjectGallery}
             </motion.a>
@@ -506,33 +428,17 @@ export default function Home() {
         <section className={styles.homeContactMe}>
           <a onClick={() => go('/contact')}>
             <motion.h1
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.homeContactMeTitle}
             </motion.h1>
 
             <motion.h2
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              transition={{
-                duration: 0.6
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {t.homeContactMeSubtitle}
             </motion.h2>

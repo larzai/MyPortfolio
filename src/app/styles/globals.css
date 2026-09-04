@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #F5F5F5;
-  font-family: var(--font-noto-sans), sans-serif;
+  font-family: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {

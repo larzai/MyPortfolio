@@ -443,7 +443,7 @@
   .hero .backGround .mainWrapper .about {
     font-family: var(--font-scotch);
     font-weight: normal;
-    font-size: 18vw;
+    font-size: 18rem;
     text-transform: uppercase;
     display: block;
   }
@@ -457,7 +457,7 @@
   .hero .backGround .mainWrapper .aboutMe h1 {
     font-family: var(--font-scotch);
     font-weight: normal;
-    font-size: 18vw;
+    font-size: 18rem;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -675,7 +675,7 @@
   
   .aboutMeTechItems span:hover {
     background: rgba(255,255,255,1);
-    transform: scale(1.05);
+    transform: scale(1.15);
   }
   
   /* Quotes Section */
